@@ -18,7 +18,15 @@
 
         <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data" class="project-form">
             @csrf
-
+            <div class="mb-3">
+                <label for="type_id" class="form-label">Project type</label>
+                <select class="form-select" name="type_id" id="type_id">
+                    <option value="">Select category</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="mb-3">
                 <label for="project_name" class="form-label">Project name</label>
                 <input type="text" class="form-control" id="project_name" name="project_name">
