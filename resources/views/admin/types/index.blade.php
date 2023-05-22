@@ -17,6 +17,7 @@
                     <th scope="col">Type Name</th>
                     <th scope="col">Type Description</th>
                     <th scope="col">Type Slug</th>
+                    <th scope="col">Project Count</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -30,6 +31,7 @@
                         </th>
                         <td>{{ $type->description }}</td>
                         <td>{{ $type->slug }}</td>
+                        <td>{{ count($type->projects) }}</td>
                         <td>
                             <div class="d-flex gap-2">
                                 <form action="{{ route('admin.types.destroy', $type->id) }}" method="POST">
