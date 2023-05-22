@@ -6,7 +6,7 @@
             {{ __('Dashboard') }}
         </h2>
         <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-4">
                 <div class="card border-primary">
                     <div class="card-header bg-primary text-white fw-bold">Projects Area</div>
                     <div class="card-body">
@@ -18,10 +18,12 @@
                         <h4 class="text-center">
                             Projects Details
                         </h4>
-                        <div>Project count: {{ $totalProjects }}</div>
-                        <div>Last creation: {{ $lastCreation->project_name }} - {{$lastCreation->created_at}}</div>
-                        <div>Last edit: {{ $lastEdit->project_name }} - {{$lastEdit->created_at}}</div>
-                        <div>Revenues: {{ $totalRevenues }}€</div>
+                        <div>Projects count: {{ $totalProjects }}</div>
+                        @if ($totalProjects > 0)
+                            <div>Last creation: {{ $lastCreation->project_name }} - {{ $lastCreation->created_at }}</div>
+                            <div>Last edit: {{ $lastEdit->project_name }} - {{ $lastEdit->created_at }}</div>
+                            <div>Revenues: {{ $totalRevenues }}€</div>
+                        @endif
                     </div>
                     <div class="card-header bg-primary">
                         <a href="{{ Route('admin.projects.index') }}"
