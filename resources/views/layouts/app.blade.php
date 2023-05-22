@@ -44,6 +44,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-white fw-medium" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium" href="{{ route('admin.types.index') }}">{{ __('Types') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-medium" href="{{ route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
