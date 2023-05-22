@@ -1,0 +1,1 @@
+<h1>Lista dei tipi</h1>
