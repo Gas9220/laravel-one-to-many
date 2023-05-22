@@ -35,7 +35,7 @@ class TypeSeeder extends Seeder
         $boolean_type->save();
 
         $client_type = new Type();
-        $client_type->name = 'Boolean';
+        $client_type->name = 'Client';
         $client_type->slug = Str::slug($client_type->name);
         $client_type->description = 'Clients projects collection';
         $client_type->save();

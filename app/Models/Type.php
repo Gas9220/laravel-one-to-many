@@ -13,4 +13,18 @@ class Type extends Model
     {
         return $this->hasMany(Project::class);
     }
+
+    public function type_color(): string
+    {
+        switch ($this->name) {
+            case 'Personal':
+                return "danger";
+            case 'Boolean':
+                return "primary";
+            case 'Client':
+                return "warning";
+            default:
+                return 'secondary';
+        }
+    }
 }

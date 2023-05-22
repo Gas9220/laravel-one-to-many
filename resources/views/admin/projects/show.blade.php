@@ -11,6 +11,7 @@
                 </div>
             @endif
         </div>
+        <span class="badge text-bg-{{$project->type?->type_color()}} fs-5">{{ $project->type?->name ?: 'Nessun tag' }}</span>
         <h4>Project name: {{ $project->project_name }}</h4>
         @if (isset($project->project_image))
             <img src="{{ asset('storage/' . $project->project_image) }}" alt='{{ $project->project_name . ' image' }}'
