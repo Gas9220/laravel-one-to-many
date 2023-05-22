@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class TypeSeeder extends Seeder
@@ -16,6 +17,11 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
+
+        Schema::disableForeignKeyConstraints();
+        Type::truncate();
+        Schema::enableForeignKeyConstraints();
+
         $personal_type = new Type();
         $personal_type->name = 'Personal';
         $personal_type->slug = Str::slug($personal_type->name);
