@@ -10,6 +10,8 @@
                     {{ session('message') }}
                 </div>
             @endif
+            <a href="{{ route('admin.projects.edit', $project->id) }}"
+                class="btn btn-primary btn-sm me-2 ms-auto"><i class="bi bi-pencil-fill"></i></a>
         </div>
         <span class="badge text-bg-{{$project->type?->type_color()}} fs-5">{{ $project->type?->name ?: 'Nessun tag' }}</span>
         <h4>Project name: {{ $project->project_name }}</h4>

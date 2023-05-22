@@ -16,7 +16,7 @@
             <h2 class="fs-4 text-secondary my-4">Create Project</h2>
         </div>
 
-        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data" class="project-form">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="type_id" class="form-label">Project type</label>
@@ -58,7 +58,7 @@
                 <label class="form-check-label" for="is_completed">Project completed</label>
                 <input class="form-check-input" type="checkbox" id="is_completed" name="is_completed" value="1">
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
+            <button type="submit" class="btn btn-primary btn-sm">Save project</button>
         </form>
     </div>
 @endsection

@@ -6,15 +6,19 @@ import.meta.glob([
     '../img/**'
 ])
 
-if (document.querySelector('project-form')) {
+if (document.getElementById('edit-project-form')) {
 
     const imageRemovedInput = document.getElementById('remove-img-input');
     const imageRemovedMessage = document.getElementById('img-removed-message');
-    const imageRemovedButton = document.getElementById('remove-img-btn');
+    let imageRemovedButton = null;
 
-    imageRemovedButton.addEventListener('click', function () {
-        removePreviousImage();
-    })
+    if (document.getElementById('remove-img-btn')) {
+        imageRemovedButton = document.getElementById('remove-img-btn');
+
+        imageRemovedButton.addEventListener('click', function () {
+            removePreviousImage();
+        })
+    }
 
     function removePreviousImage() {
         imageRemovedMessage.classList.remove('d-none');

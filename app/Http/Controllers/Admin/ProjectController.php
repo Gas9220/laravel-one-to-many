@@ -79,7 +79,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -103,7 +104,7 @@ class ProjectController extends Controller
             }
 
             $project->project_image = Storage::put('uploads', $data['project_image']);
-        } else if ($data['delete_prev_image'] == 'true') {
+        } else if (isset($data['delete_prev_image'])) {
             Storage::delete($project->project_image);
             $project->project_image = null;
 
